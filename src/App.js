@@ -8,6 +8,8 @@ import {
 import Home from './Pages/Home/Home/Home';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import Login from './Pages/Login/Login/Login';
+import Explore from './Pages/Explore/Explore';
+import Register from './Pages/Login/Register/Register';
 
 function App() {
   return (
@@ -23,6 +25,12 @@ function App() {
             </Route>
             <Route exact path="/login">
               <Login> </Login>
+            </Route>
+            <Route path="/register">
+             <Register> </Register>
+            </Route>
+            <Route exact path="/explore">
+              <Explore></Explore>
             </Route>
           </Switch>
         </Router>
