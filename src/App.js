@@ -12,6 +12,8 @@ import Explore from './Pages/Explore/Explore';
 import Register from './Pages/Login/Register/Register';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import Notfound from './Pages/Notfound/Notfound';
+import BikeDetail from './Pages/BikeDetail/BikeDetail';
 
 function App() {
   return (
@@ -37,6 +39,12 @@ function App() {
             <PrivateRoute path="/dashboard">
               <Dashboard> </Dashboard>
             </PrivateRoute>
+            <PrivateRoute exact path="/service/:mealId">
+            <BikeDetail> </BikeDetail>
+          </PrivateRoute>
+            <Route path="*">
+              <Notfound> </Notfound>
+            </Route>
           </Switch>
         </Router>
       </AuthProvider>

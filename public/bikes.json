@@ -1,0 +1,53 @@
+[
+    {
+        "_id": 1,
+        "name": "2018 Ktm 690 DUKE ORANGE",
+        "price": 6799,
+        "img": "http://77.74.192.164/imagestream/73037/4267259x600x440_FFFFFF_E.jpg",
+        "description": "KTM 690 Duke is one of the most efficient motorcycles ever made in the world. It carries a 690cc, single cylinder engine producing 72 BHP at 8000 rpm and 70 Nm at 6500 rpm. The best part comes when its power to weight ratio is calculated as the bike weighs just 148.5 kg (dry)."
+    },
+
+    {
+        "_id": 2,
+        "name": "2019 YAMAHA NIKEN GRAPHITE",
+        "price": 8595,
+        "img": "http://77.74.192.164/imagestream/73037/3685538x600x440_FFFFFF_E.jpg",
+        "description": "Although the Niken is heavier than your average motorcycle, the bike can potentially be faster than a normal 2-wheel motorcycle. Since the Niken is able to lean up to 45 degrees, it can steer more sharply around a corner at a much higher speed than a regular motorcycle."
+    },
+    {
+        "_id": 3,
+        "name": "2018 HONDA CBR 650 F RED",
+        "price": 5999,
+        "img": "http://77.74.192.164/imagestream/73037/4296223x600x440_FFFFFF_E.jpg",
+        "description": "In terms of features, the CBR650F featured a single LED headlamp, while the CBR650R, being the sportier of the two, is equipped with aggressively styled twin-LED headlamps. The CBR650R sports a modern-looking LCD instrument cluster whereas the CBR650F had an archaic twin-pod digital instrument cluster."
+    },
+    {
+        "_id": 4,
+        "name": "2018 Suzuki GSXS1000F BLUE",
+        "price": 8499,
+        "img": "http://77.74.192.164/imagestream/73037/4318646x600x440_FFFFFF_E.jpg",
+        "description": "The Motorcycle Cruise Control unit is specifically designed for the GSX-S1000. It was developed on a 2017 model bike and will fit all 2017 & later models. ... Not other modifications were necessary to fit the GSX-S1000F."
+    },
+    {
+        "_id": 5,
+        "name": "2014 Yamaha XJ600S DIVERSION WHITE",
+        "price": 4199,
+        "img": "http://77.74.192.164/imagestream/73037/4364218x600x440_FFFFFF_E.jpg",
+        "description": "The Yamaha ZJR6 Diversion was especially designed for those who love to mix high speeds with two wheels.It is powered by a liquid cooled, 4 stroke, DOHC, forward inclined parallel 4 cylinder, 4 valves engine with a displacement of 600 cc. The unit is mated on a constant mesh six speed transmission."
+    },
+    {
+        "_id": 6,
+        "name": "2015 Triumph SPEED TRIPLE R 1050 BLACK",
+        "price": 7999,
+        "img": "http://77.74.192.164/imagestream/73037/4402651x600x440_FFFFFF_E.jpg",
+        "description": "While it's always lagged behind most rival super nakeds when it comes to outright power, the Speed Triple has remained the most enjoyable naked to ride on the road. ... When it comes to smiles per mile, the Speed Triple 1050 remains simply one of the best naked bikes around."
+    },
+    {
+        "_id": 7,
+        "name": "1998 TRIUMPH THUNDERBIRD 900 BLACK",
+        "price": 4499,
+        "img": "http://77.74.192.164/imagestream/73037/4420023x600x440_FFFFFF_E.jpg",
+        "description": "Triumph Thunderbird 900 is a great used buy.That's due not just to the current fashion for retros and the T-bird's 'bigger, three-cylinder Bonnie' appeal, but also to its still relevant 70bhp performance, its durability and reliability."
+    }
+
+]
