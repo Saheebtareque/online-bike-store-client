@@ -24,7 +24,7 @@ const BikeDetail = () => {
     const onSubmit = data => {
         console.log(data);
 
-        fetch('http://localhost:5000/products/orderedbikes', {
+        fetch('http://localhost:5000/orderedbikes', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ const BikeDetail = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged === true) {
-                    alert('meal order placed');
+                    alert('bike ordered successfully');
                     reset();
                 }
             })
@@ -46,12 +46,12 @@ const BikeDetail = () => {
     return (
         <div>
              <h1>Meals's Id: {bikeId} </h1>
-            <div className="bike-info">
+            <div className="bike-info ">
                 <Card style={{ width: '50rem' }}>
                     <Card.Img variant="top" src={bikedetail.img} />
                     <Card.Body>
                         <Card.Title className="text-warning">{bikedetail.name}</Card.Title>
-                        <Card.Title className="text-success">{bikedetail.price} taka</Card.Title>
+                        <Card.Title className="text-success"> {bikedetail.price} </Card.Title>
                         <Card.Text>
                             {bikedetail.description}
                         </Card.Text>
@@ -71,10 +71,8 @@ const BikeDetail = () => {
                     <label> Amount to be paid:</label>
                     <input {...register("price", { })} defaultValue= {bikedetail.price}/>
 
-
-
-                    <label> Meal: </label>
-                    <input {...register("meal", {})} placeholder="Name of the meal" defaultValue={bikedetail.name} />
+                    <label> Bike: </label>
+                    <input {...register("meal", {})} placeholder="Name of the bike" defaultValue={bikedetail.name} />
                     
                    
 
@@ -94,6 +92,8 @@ const BikeDetail = () => {
                     <input type="submit" />
                 </form>
             </div>
+
+            
 
 
             <button className="btn-success px-3 py-2" onClick={handleClick}>Go back</button>

@@ -12,7 +12,7 @@ import MakeAdmin from './Dashboard/MakeAdmin/MakeAdmin';
 import Welcome from './Dashboard/Welcome/Welcome';
 import MyOrders from './MyOrders/MyOrders';
 import Payment from './Dashboard/Payment/Payment';
-import Review from './Review/Review';
+import Review from '../Home/Review/Review';
 import AdminRoute from '../Login/AdminRoute';
 import ManageOrders from './ManageOrders/ManageOrders';
 import AddProduct from './AddProduct/AddProduct';
