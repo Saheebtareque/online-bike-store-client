@@ -9,22 +9,22 @@ const BikeDetail = () => {
     const { user, } = useAuth();
     const { bikeId } = useParams();
     const history = useHistory();
-    const [mealdetail, setMealdetail] = useState({});
+    const [bikedetail, setBikedetail] = useState({});
     const { register, handleSubmit, reset } = useForm();
-    // useEffect(() => {
-    //     fetch(`https://afternoon-earth-11436.herokuapp.com/meals/${bikeId}`)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setMealdetail(data)
-    //             reset(data)
-    //         }
-    //         );
-    // }, [reset,bikeId])
+    useEffect(() => {
+        fetch(`http://localhost:5000/products/${bikeId}`)
+            .then(res => res.json())
+            .then(data => {
+                setBikedetail(data)
+                reset(data)
+            }
+            );
+    }, [reset,bikeId])
 
     const onSubmit = data => {
         console.log(data);
 
-        fetch('https://afternoon-earth-11436.herokuapp.com/orderedmeals', {
+        fetch('http://localhost:5000/products/orderedbikes', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -46,21 +46,21 @@ const BikeDetail = () => {
     return (
         <div>
              <h1>Meals's Id: {bikeId} </h1>
-            <div className="meal-info">
+            <div className="bike-info">
                 <Card style={{ width: '50rem' }}>
-                    <Card.Img variant="top" src={mealdetail.img} />
+                    <Card.Img variant="top" src={bikedetail.img} />
                     <Card.Body>
-                        <Card.Title className="text-warning">{mealdetail.name}</Card.Title>
-                        <Card.Title className="text-success">{mealdetail.price} taka</Card.Title>
+                        <Card.Title className="text-warning">{bikedetail.name}</Card.Title>
+                        <Card.Title className="text-success">{bikedetail.price} taka</Card.Title>
                         <Card.Text>
-                            {mealdetail.description}
+                            {bikedetail.description}
                         </Card.Text>
                     </Card.Body>
                 </Card>
             </div>
 
 
-            <div className="meal-form my-5">
+            <div className="bike-form my-5">
             <form onSubmit={handleSubmit(onSubmit)}>
                     <label> Order ID:</label>
                     <input {...register("orderId", {})}defaultValue={bikeId} />
@@ -69,12 +69,12 @@ const BikeDetail = () => {
                     <input {...register("orderStatus", {})}  defaultValue="pending" />
 
                     <label> Amount to be paid:</label>
-                    <input {...register("price", { })} defaultValue= {mealdetail.price}/>
+                    <input {...register("price", { })} defaultValue= {bikedetail.price}/>
 
 
 
                     <label> Meal: </label>
-                    <input {...register("meal", {})} placeholder="Name of the meal" defaultValue={mealdetail.name} />
+                    <input {...register("meal", {})} placeholder="Name of the meal" defaultValue={bikedetail.name} />
                     
                    
 
