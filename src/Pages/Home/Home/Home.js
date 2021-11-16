@@ -2,7 +2,7 @@ import React from 'react';
 import Banner from '../Banner/Banner';
 import Footer from '../Footer/Footer';
 import Naviagtion from '../Navigation/Navigation';
-import Review from '../Review/Review';
+import ReviewResult from '../ReviewResult/ReviewResult';
 import Services from '../Services/Services';
 import Subscribe from '../Subscribe/Subscribe';
 
@@ -12,7 +12,7 @@ const Home = () => {
             <Naviagtion> </Naviagtion>
             <Banner> </Banner>
             <Services> </Services>
-            <Review> </Review>
+            <ReviewResult> </ReviewResult>
             <Subscribe> </Subscribe>
             <Footer></Footer>
         </div>
