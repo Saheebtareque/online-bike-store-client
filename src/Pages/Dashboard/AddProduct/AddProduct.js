@@ -5,9 +5,9 @@ import './AddProduct.css';
 const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-         console.log(data);
+        console.log(data);
 
-        fetch('http://localhost:5000/products', {
+        fetch('https://infinite-tundra-94771.herokuapp.com/products', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -24,15 +24,15 @@ const AddProduct = () => {
     }
     return (
         <div className="add-product my-5">
-        <h1 className="my-5"> Please add a new motorbike:</h1>
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <input {...register("name", { required: true })} placeholder="Name of the product" />
-            <input {...register("img")} placeholder="image url of product" />
-            <input type="number" {...register("price")} placeholder="price" />
-            <textarea {...register("description")} placeholder="Description of the product" />
-            <input type="submit" />
-        </form>
-    </div>
+            <h1 className="my-5"> Please add a new motorbike:</h1>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <input {...register("name", { required: true })} placeholder="Name of the product" />
+                <input {...register("img")} placeholder="image url of product" />
+                <input type="number" {...register("price")} placeholder="price" />
+                <textarea {...register("description")} placeholder="Description of the product" />
+                <input type="submit" />
+            </form>
+        </div>
     );
 };
 

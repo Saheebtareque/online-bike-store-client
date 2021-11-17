@@ -12,21 +12,21 @@ const BikeDetail = () => {
     const [bikedetail, setBikedetail] = useState({});
     const { register, handleSubmit, reset } = useForm();
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${bikeId}`)
+        fetch(`https://infinite-tundra-94771.herokuapp.com/products/${bikeId}`)
             .then(res => res.json())
             .then(data => {
                 setBikedetail(data);
                 reset(data);
-              
-                
+
+
             }
             );
-    }, [reset,bikeId])
+    }, [reset, bikeId])
 
     const onSubmit = data => {
         console.log(data);
 
-        fetch('http://localhost:5000/orderedbikes', {
+        fetch('https://infinite-tundra-94771.herokuapp.com/orderedbikes', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ const BikeDetail = () => {
     }
     return (
         <div>
-             <h1>Bike's Id: {bikeId} </h1>
+            <h1>Bike's Id: {bikeId} </h1>
             <div className="bike-info ">
                 <Card style={{ width: '50rem' }}>
                     <Card.Img variant="top" src={bikedetail.img} />
@@ -64,39 +64,39 @@ const BikeDetail = () => {
 
 
             <div className="bike-form my-5">
-            <form onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={handleSubmit(onSubmit)}>
                     <label> Order ID:</label>
-                    <input {...register("orderId", {})}defaultValue={bikeId} />
+                    <input {...register("orderId", {})} defaultValue={bikeId} />
 
                     <label> Order status:</label>
-                    <input {...register("orderStatus", {})}  defaultValue="pending" />
+                    <input {...register("orderStatus", {})} defaultValue="pending" />
 
                     <label> Amount to be paid:</label>
-                    <input {...register("price", { })} defaultValue= {bikedetail.price}/>
+                    <input {...register("price", {})} defaultValue={bikedetail.price} />
 
                     <label> Bike: </label>
                     <input {...register("name", {})} placeholder="Name of the bike" defaultValue={bikedetail.name} />
-                    
-                   
+
+
 
                     <label> Name: </label>
-                    <input {...register("uName", {})}  defaultValue={user.displayName} />
+                    <input {...register("uName", {})} defaultValue={user.displayName} />
 
 
                     <label> Email address: </label>
-                    <input {...register("email", { })}  defaultValue={user.email} />
+                    <input {...register("email", {})} defaultValue={user.email} />
 
                     <label> Address: </label>
                     <input {...register("address", { required: true })} />
                     <label> contact number: </label>
-                    <input type="number"  {...register("phone", { required: true})}  />
+                    <input type="number"  {...register("phone", { required: true })} />
 
-                    
+
                     <input type="submit" />
                 </form>
             </div>
 
-            
+
 
 
             <button className="btn-success px-3 py-2" onClick={handleClick}>Go back</button>

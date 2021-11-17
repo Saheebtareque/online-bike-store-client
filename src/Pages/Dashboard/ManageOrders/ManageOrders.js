@@ -4,7 +4,7 @@ const MyOrders = () => {
     const [order, setOrder] = useState([]);
     const [update,setUpdate]=useState({});
     useEffect(() => {
-        fetch('http://localhost:5000/orderedbikes/')
+        fetch('https://infinite-tundra-94771.herokuapp.com/orderedbikes/')
             .then(res => res.json())
             .then(data => {
                 setOrder(data)
@@ -16,7 +16,7 @@ const MyOrders = () => {
 const handleDelete = id => {
     const proceed = window.confirm('Are you sure, you want to delete?');
     if (proceed) {
-        const url = `http://localhost:5000/orderedbikes/${id}`;
+        const url = `https://infinite-tundra-94771.herokuapp.com/orderedbikes/${id}`;
         fetch(url, {
             method: 'DELETE'
         })
@@ -37,7 +37,7 @@ const handleUpdate = id =>{
         orderStatus:'Approved'
     }
     setUpdate(updated);
-    const url = `http://localhost:5000/orderedbikes/${id}`;
+    const url = `https://infinite-tundra-94771.herokuapp.com/orderedbikes/${id}`;
     
 fetch(url, {
     method: 'PUT',

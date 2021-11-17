@@ -5,12 +5,12 @@ import './Services.css';
 const Services = () => {
     const [services, setServices] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://infinite-tundra-94771.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setServices(data));
     }, [])
 
-    const specificServices = services.slice(0,7);
+    const specificServices = services.slice(0, 7);
 
     return (
         <div id="services">

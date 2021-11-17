@@ -2,9 +2,10 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import './Review.css'
 const Review = () => {
-    const { register, handleSubmit,reset } = useForm();
-    const onSubmit = data => { console.log(data);
-        fetch('http://localhost:5000/reviews', {
+    const { register, handleSubmit, reset } = useForm();
+    const onSubmit = data => {
+        console.log(data);
+        fetch('https://infinite-tundra-94771.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -21,10 +22,10 @@ const Review = () => {
 
     }
     return (
-        <div  className="review-form my-5" >
+        <div className="review-form my-5" >
             <h1> Please kindy give your review: </h1>
             <form onSubmit={handleSubmit(onSubmit)}>
-            <label> Your name:</label>
+                <label> Your name:</label>
                 <input {...register("Name")} />
                 <label> Description: :</label>
                 <textarea {...register("review")} />

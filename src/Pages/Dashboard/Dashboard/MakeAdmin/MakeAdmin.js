@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Alert} from 'react-bootstrap';
+import { Alert } from 'react-bootstrap';
 
 const MakeAdmin = () => {
     const [email, setEmail] = useState('');
@@ -10,7 +10,7 @@ const MakeAdmin = () => {
     }
     const handleAdminSubmit = e => {
         const user = { email };
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://infinite-tundra-94771.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -33,7 +33,7 @@ const MakeAdmin = () => {
             <form onSubmit={handleAdminSubmit}>
                 <input type="email" onBlur={handleOnBlur} />
                 <button type="submit" class="btn btn-success">add</button>
-               
+
             </form>
             {success && <Alert variant="success">Made Admin successfully!</Alert>}
         </div>

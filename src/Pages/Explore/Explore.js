@@ -6,7 +6,7 @@ import './Explore.css';
 const Explore = () => {
     const [services, setServices] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://infinite-tundra-94771.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setServices(data));
     }, [])
