@@ -24,7 +24,7 @@ const AddProduct = () => {
     }
     return (
         <div className="add-product my-5">
-        <h1 className="my-5"> Please add a new meal:</h1>
+        <h1 className="my-5"> Please add a new motorbike:</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
             <input {...register("name", { required: true })} placeholder="Name of the product" />
             <input {...register("img")} placeholder="image url of product" />

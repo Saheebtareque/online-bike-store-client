@@ -56,7 +56,8 @@ const Dashboard = () => {
                 </Route> 
                 <Route path={`${path}/payment`}>
                     <Payment> </Payment>
-                </Route> <Route path={`${path}/review`}>
+                </Route> 
+                <Route path={`${path}/review`}>
                     <Review> </Review>
                 </Route>
                 <AdminRoute path={`${path}/makeAdmin`}>

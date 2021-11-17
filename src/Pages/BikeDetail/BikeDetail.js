@@ -45,7 +45,7 @@ const BikeDetail = () => {
     }
     return (
         <div>
-             <h1>Meals's Id: {bikeId} </h1>
+             <h1>Bike's Id: {bikeId} </h1>
             <div className="bike-info ">
                 <Card style={{ width: '50rem' }}>
                     <Card.Img variant="top" src={bikedetail.img} />
@@ -72,7 +72,7 @@ const BikeDetail = () => {
                     <input {...register("price", { })} defaultValue= {bikedetail.price}/>
 
                     <label> Bike: </label>
-                    <input {...register("meal", {})} placeholder="Name of the bike" defaultValue={bikedetail.name} />
+                    <input {...register("name", {})} placeholder="Name of the bike" defaultValue={bikedetail.name} />
                     
                    
 
