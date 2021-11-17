@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react';
 import { Button,Card, Col, Row } from 'react-bootstrap';
 const MyOrders = () => {
     const [order, setOrder] = useState([]);
+    const [update,setUpdate]=useState({});
     useEffect(() => {
         fetch('http://localhost:5000/orderedbikes/')
             .then(res => res.json())
@@ -30,6 +31,32 @@ const handleDelete = id => {
             });
     }
 }
+// Update order status
+const handleUpdate = id =>{
+    const updated ={
+        orderStatus:'Approved'
+    }
+    setUpdate(updated);
+    const url = `http://localhost:5000/orderedbikes/${id}`;
+    
+fetch(url, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(update),
+  })
+  .then(response => response.json())
+  .then(data => {
+    if(data.modifiedCount > 0)
+    {
+        alert('orderstatus updated');
+        window.location.reload();
+    }
+  })
+
+
+}
 
 
     return (
@@ -51,6 +78,7 @@ const handleDelete = id => {
                              <h6> Address: <span className="text-success"> {orders.address} </span></h6>
                              <h6> phone: <span className="text-success"> {orders.phone} </span></h6>
                              <Button onClick={() => handleDelete(orders._id)} variant="danger">Delete</Button>
+                             <Button onClick={() => handleUpdate(orders._id)} variant="warning">Update</Button>
                   
                             </Card.Text>
                           </Card.Body>

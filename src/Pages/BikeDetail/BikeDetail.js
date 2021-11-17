@@ -15,8 +15,10 @@ const BikeDetail = () => {
         fetch(`http://localhost:5000/products/${bikeId}`)
             .then(res => res.json())
             .then(data => {
-                setBikedetail(data)
-                reset(data)
+                setBikedetail(data);
+                reset(data);
+              
+                
             }
             );
     }, [reset,bikeId])
@@ -36,6 +38,7 @@ const BikeDetail = () => {
                 if (data.acknowledged === true) {
                     alert('bike ordered successfully');
                     reset();
+                    history.push('/');
                 }
             })
     }
